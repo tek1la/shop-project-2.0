@@ -167,6 +167,7 @@ body {
     color: #2c71b8;
     font-size: 21px;
     border: none;
+    outline: none;
 }
 
 .search-input::placeholder {
