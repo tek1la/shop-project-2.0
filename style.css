@@ -157,6 +157,7 @@ body {
     height: 40px;
     border: 2px solid #2c71b8;
     margin-right: 30px;
+    outline: none;
 }
 
 .search-input {
