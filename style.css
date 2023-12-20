@@ -5,6 +5,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url(./img/patt.png);
+    position: relative;
 }
 
 .header {
@@ -459,6 +460,11 @@ body {
     background-image: url(img/hover-zoom.png);
 }
 
+.like-on-click {
+    background-color: #2c71b8;
+    background-image: url(img/hover-like.png);
+}
+
 .like:hover {
     background-color: #2c71b8;
     background-image: url(img/hover-like.png);
@@ -571,4 +577,82 @@ footer {
     color: #2c71b8;
     font-size: 21px;
     font-weight: 300;
+}
+
+/* modal */
+
+.modal-wraper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-form-wraper {
+    position: fixed ;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 500px;
+    border: 1px solid black;
+    padding: 20px 30px;
+    background-color: white;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal-inputs-wraper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.modal-inputs-wraper input {
+    width: 45%;
+}
+
+.modal-subject {
+    margin: 15px 0;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.modal-form input {
+    display: block;
+}
+
+.modal-text-area {
+    margin-top: 20px;
+    height: 100px;
+    resize: none
+}
+
+.modal-btn-wraper {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-btn {
+    width: 70px;
+    height: 25px;
+    background-color: white;
+}
+
+.disable {
+    display: none;
 }
