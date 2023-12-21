@@ -249,6 +249,42 @@ body {
 
 .slider {
     height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.slider > div {
+    font-size: 100px;
+    font-weight: 100;
+    color: white;
+}
+
+.slick-dots > li > button {
+    border: 1px solid white;
+    width: 10px;
+    height: 10px;
+}
+
+.slick-dots li button:before {
+    content: normal;
+}
+
+.slick-dots li.slick-active button {
+    background-color: white;
+}
+
+.slick-prev:before {
+    content: url(img/arrow-slider-left.svg);
+}
+
+.slick-next:before {
+    content: url(img/arrow-slider-right.svg);
+}
+
+.slick-prev, .slick-next {
+    top: 46%;
+    width: 50px;
 }
 
 /* filter */

@@ -35,16 +35,43 @@ for (like of likeBtn) {
     }
   });
 }
+// те ж саме що і вище!!!
+
+// likeBtn.forEach((item) => {
+//   item.addEventListener("click", function() {
+//     item.classList.toggle("like-on-click");
+//   })
+// })
+
 // end
 
 // modal block
 
+function closeModal() {
+  modalBlock.classList.add("disable");
+}
+
 for (detals of detalsBtn) {
   detals.addEventListener("click", function () {
     modalBlock.classList.remove("disable");
+    // modalBlock.style.display = "block";     можна просто додати стиль через атрибут style
   });
 }
 
-closeBtn.addEventListener("click", function () {
-  modalBlock.classList.add("disable");
+closeBtn.addEventListener("click", closeModal);
+
+modalBlock.addEventListener("click", function (e) {
+  if (e.target === modalBlock) {
+    closeModal();
+  }
+});
+
+$(document).ready(function () {
+  $(".slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+  });
 });
