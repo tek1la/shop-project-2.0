@@ -75,3 +75,82 @@ $(document).ready(function () {
     adaptiveHeight: true,
   });
 });
+
+// counter func style
+let incrementBtns = document.querySelectorAll(".increment-btn");
+let decrementBtns = document.querySelectorAll(".decrement-btn");
+let inputFields = document.querySelectorAll(".product-quantity input");
+let minCount = 1;
+let maxCount = 10;
+
+console.log(incrementBtns);
+console.log(decrementBtns);
+console.log(inputFields);
+// decrementBtns.disabled = true;
+
+// function touggleButtonState(count) {
+// if (+count === 1) {
+//   decrementBtns.disabled = true;
+// } else if (+count === 10) {
+//   incrementBtns.disabled = true;
+// } else if (+count > 1) {
+//   decrementBtns.disabled = false;
+//   incrementBtns.disabled = false;
+// }
+//   decrementBtns.disabled = count <= minCount;
+//   incrementBtns.disabled = count >= maxCount;
+// }
+
+// incrementBtns.addEventListener("click", function () {
+//   let currentCount = +inputFields.value;
+//   inputFields.value = currentCount + 1;
+//   touggleButtonState(+inputFields.value);
+// });
+
+// decrementBtns.addEventListener("click", function () {
+//   let currentCount = +inputFields.value;
+//   inputFields.value = currentCount - 1;
+//   touggleButtonState(+inputFields.value);
+// });
+
+// OOP (обєктно орьєнтоване програмування)
+
+function Counter(incrementBtns, decrementBtns, inputFields) {
+  this.domRefs = {
+    incrementBtns,
+    decrementBtns,
+    inputFields,
+  };
+  this.toggleButtonState = function () {
+    let count = +this.domRefs.inputFields.value;
+    this.domRefs.decrementBtns.disabled = count <= 1;
+    this.domRefs.incrementBtns.disabled = count >= 10;
+  };
+  this.toggleButtonState();
+
+  this.increment = function () {
+    this.domRefs.inputFields.value = +this.domRefs.inputFields.value + 1;
+    this.toggleButtonState();
+  };
+  this.decrement = function () {
+    this.domRefs.inputFields.value = +this.domRefs.inputFields.value - 1;
+    this.toggleButtonState();
+  };
+  this.domRefs.incrementBtns.addEventListener(
+    "click",
+    this.increment.bind(this)
+  );
+  this.domRefs.decrementBtns.addEventListener(
+    "click",
+    this.decrement.bind(this)
+  );
+}
+
+for (i = 0; i < inputFields.length; i++) {
+  const counter1 = new Counter(
+    incrementBtns[i],
+    decrementBtns[i],
+    inputFields[i]
+  );
+  console.log(counter1);
+}
